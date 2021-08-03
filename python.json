@@ -1,0 +1,7 @@
+{
+	"if name main": {
+	  "prefix": ["ifname", "defmain"],
+	  "body": ["from core import *","\n", "def main():", "\t$0", "\n", "if __name__=='__main__':", "\tmain()"],
+	  "description": "A for loop."
+	}
+  }

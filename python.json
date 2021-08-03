@@ -2,6 +2,21 @@
 	"if name main": {
 	  "prefix": ["ifname", "defmain"],
 	  "body": ["from core import *","\n", "def main():", "\t$0", "\n", "if __name__=='__main__':", "\tmain()"],
-	  "description": "A for loop."
+	  "description": "if name main base to indicate header of script"
+	}, 
+	"if file exist": {
+		"prefix": ["file exist", "if file exist"],
+		"body": ["filename='$3'","if os.path.exists('{0}'.format(filename)):","\t$1", "else:", "\t$2"],
+		"description": "if file exists do something else do something else"
+	}, 
+	"timer": {
+		"prefix": ["timeit", "timer"],
+		"body": ["import time","t = time.time()","$0", "print('done query, Took: {0}s'.format(time.time()-t))"],
+		"description": "time stuff"
+	},
+	"api request": {
+		"prefix": ["api-post"],
+		"body": ["import requests","response = requests.post(url ='$1',", "headers={'content-type':'$2'},", "data=$3", ")"],
+		"description": "make api request"
 	}
   }
